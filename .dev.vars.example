@@ -1,0 +1,7 @@
+# Copia a .dev.vars (nunca se sube a git) para `npm run dev`.
+# En prod usa: wrangler secret put TURNSTILE_SECRET / MAIL_API_KEY
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+MAIL_API_KEY=sk_live_CAMBIAME
+MAIL_API_URL=https://platform.cyberpersons.com/email/v1/send
+MAIL_FROM=website@galaxyweb.dev
+MAIL_TO=sales@galaxyweb.dev

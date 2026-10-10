@@ -13,13 +13,12 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "12.6.12",
-		"@astrojs/mdx": "4.3.13",
-		"@astrojs/rss": "4.0.14",
-		"@astrojs/sitemap": "3.6.1",
 		"astro": "5.16.9",
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
+		"@tailwindcss/vite": "^4.3.3",
+		"tailwindcss": "^4.3.3",
 		"wrangler": "4.136.1"
 	},
 	"engines": {

@@ -7,6 +7,11 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"vars": {
+		"MAIL_API_URL": "https://platform.cyberpersons.com/email/v1/send",
+		"MAIL_FROM": "website@galaxyweb.dev",
+		"MAIL_TO": "sales@galaxyweb.dev"
+	},
 	"observability": {
 		"enabled": true
 	},

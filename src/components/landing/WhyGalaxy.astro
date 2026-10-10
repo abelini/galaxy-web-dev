@@ -1,0 +1,27 @@
+---
+import SectionHeading from './SectionHeading.astro';
+const points = [
+  { t: "Un solo proveedor", d: "Hosting, web, app y streaming coordinados. Nada de pelearte con 4 empresas." },
+  { t: "Rendimiento obsesivo", d: "Astro + Cloudflare: webs que cargan en <1s y puntúan 100 en Lighthouse." },
+  { t: "Diseño que vende", d: "Moderno, responsive y orientado a que te contacten, no solo a que se vea bonito." },
+  { t: "Soporte real", d: "Hablas con quien construye tu proyecto. Respuesta en 24h." },
+];
+---
+<section id="nosotros" class="py-20 px-5 scroll-mt-16 border-t border-white/5">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 rounded-full px-4 py-1.5">Por qué Galaxy Web</span>
+      <h2 class="font-[Space_Grotesk] text-3xl sm:text-4xl font-bold text-white mt-4 leading-tight">Tu socio técnico, no solo tu proveedor</h2>
+      <p class="text-slate-400 mt-4 text-lg">Somos un estudio compacto: menos burocracia, más velocidad y trato directo.</p>
+      <a href="#contacto" class="inline-block mt-6 font-semibold text-white border border-white/20 hover:border-white/40 hover:bg-white/5 rounded-full px-6 py-3 transition">Conócenos por tu proyecto →</a>
+    </div>
+    <ul class="grid gap-4">
+      {points.map((p) => (
+        <li class="flex gap-4 bg-white/[0.04] border border-white/10 rounded-2xl p-5">
+          <span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-emerald-400/15 border border-emerald-300/30 grid place-items-center text-emerald-300 text-sm">✓</span>
+          <div><h3 class="font-semibold text-white">{p.t}</h3><p class="text-slate-400 mt-1">{p.d}</p></div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-white/10 px-5 py-10">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+    <a href="#inicio" class="flex items-center gap-2.5 font-[Space_Grotesk] font-bold text-white">
+      <img src="/assets/logo.png" alt="Galaxy Web" width="32" height="32" class="h-8 w-8 object-contain" />
+      Galaxy Web
+    </a>
+    <nav class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+      <a href="#servicios" class="hover:text-white transition">Servicios</a>
+      <a href="#proceso" class="hover:text-white transition">Proceso</a>
+      <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+      <a href="#contacto" class="hover:text-white transition">Contacto</a>
+    </nav>
+    <p class="text-sm text-slate-500">© {year} Galaxy Web. Todos los derechos reservados.</p>
+  </div>
+</footer>

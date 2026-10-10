@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/landing/Navbar.astro';
+import Footer from '../components/landing/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="bg-[#050816] text-slate-200 font-[Inter] antialiased overflow-x-hidden">
+    <div class="fixed inset-0 -z-10 pointer-events-none">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1e1b4b_0%,#050816_60%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"></div>
+    </div>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
