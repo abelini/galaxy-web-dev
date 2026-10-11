@@ -1,3 +1,5 @@
+import { env } from "cloudflare:workers";
+
 export const prerender = false;
 
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -27,14 +29,12 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-function getEnv(locals: unknown, key: string, fallback = ""): string {
-  const runtimeEnv = (locals as Record<string, unknown> | undefined)?.["runtime"] as
-    | { env?: Record<string, string> }
-    | undefined;
-  if (runtimeEnv?.env?.[key]) return runtimeEnv.env[key] as string;
+function getEnv(key: string, fallback = ""): string {
+  const v = (env as unknown as Record<string, unknown>)[key];
+  if (typeof v === "string" && v) return v;
   try {
-    const v = (import.meta as unknown as { env?: Record<string, string> }).env?.[key];
-    if (v) return v;
+    const im = (import.meta as unknown as { env?: Record<string, string> }).env?.[key];
+    if (im) return im;
   } catch {
     /* ignore */
   }
@@ -52,11 +52,9 @@ function escapeHtml(s: string): string {
 
 export async function POST({
   request,
-  locals,
   clientAddress,
 }: {
   request: Request;
-  locals: unknown;
   clientAddress?: string;
 }) {
   let body: Record<string, unknown>;
@@ -94,7 +92,7 @@ export async function POST({
       { status: 429 }
     );
 
-  const turnstileSecret = getEnv(locals, "TURNSTILE_SECRET", TEST_TURNSTILE_SECRET);
+  const turnstileSecret = getEnv("TURNSTILE_SECRET", TEST_TURNSTILE_SECRET);
   if (!turnstileSecret)
     return Response.json({ error: "Falta configuración anti-spam." }, { status: 500 });
 
@@ -117,10 +115,10 @@ export async function POST({
   }
 
   // 2. Enviar email vía tu API (la key solo vive en el Worker, nunca en el front)
-  const mailApiUrl = getEnv(locals, "MAIL_API_URL", DEFAULT_MAIL_URL);
-  const mailApiKey = getEnv(locals, "MAIL_API_KEY", "");
-  const mailFrom = getEnv(locals, "MAIL_FROM", "website@galaxyweb.dev");
-  const mailTo = getEnv(locals, "MAIL_TO", "sales@galaxyweb.dev");
+  const mailApiUrl = getEnv("MAIL_API_URL", DEFAULT_MAIL_URL);
+  const mailApiKey = getEnv("MAIL_API_KEY", "");
+  const mailFrom = getEnv("MAIL_FROM", "website@galaxyweb.dev");
+  const mailTo = getEnv("MAIL_TO", "sales@galaxyweb.dev");
   if (!mailApiKey)
     return Response.json({ error: "Falta configuración de correo." }, { status: 500 });
 
