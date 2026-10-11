@@ -6,7 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://galaxy-web.dev",
+	site: "https://galaxyweb.dev",
 	// Astro 7 default es 'jsx'; se fija explícito para documentar la
 	// decisión de adoptar el nuevo manejo de whitespace.
 	compressHTML: "jsx",
