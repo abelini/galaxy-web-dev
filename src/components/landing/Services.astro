@@ -14,7 +14,7 @@ import { SERVICES } from '../../consts';
         <article class={`group relative bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-violet-400/40 rounded-2xl p-7 transition ${i === 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
           <div class="flex items-start justify-between">
             <span class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600/30 to-cyan-400/20 border border-white/10 grid place-items-center">
-              <svg viewBox="0 0 24 24" class="w-6 h-6 text-cyan-300" fill="currentColor"><path d={s.icon} /></svg>
+              <i class={`${s.icon} text-xl text-cyan-300`}></i>
             </span>
             <span class="text-[11px] font-semibold uppercase tracking-wider text-violet-300 bg-violet-500/15 border border-violet-400/25 rounded-full px-3 py-1">{s.tag}</span>
           </div>
@@ -25,7 +25,7 @@ import { SERVICES } from '../../consts';
       <a href="#contacto" class="group bg-gradient-to-br from-violet-600 to-cyan-500 rounded-2xl p-7 flex flex-col justify-center hover:opacity-95 transition shadow-xl shadow-violet-900/40">
         <h3 class="font-[Space_Grotesk] text-xl font-bold text-white">¿Necesitas algo a medida?</h3>
         <p class="text-white/80 mt-2">Cuéntanos tu idea y te proponemos la mejor combinación.</p>
-        <span class="mt-4 font-semibold text-white inline-flex items-center gap-2">Hablar con nosotros <span aria-hidden="true">→</span></span>
+        <span class="mt-4 font-semibold text-white inline-flex items-center gap-2">Hablar con nosotros <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
       </a>
     </div>
   </div>

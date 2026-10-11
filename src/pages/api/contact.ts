@@ -8,7 +8,7 @@ const TEST_TURNSTILE_SECRET = "1x0000000000000000000000000000000AA";
 const ALLOWED_SERVICES = [
   "Hospedaje web",
   "Diseño web",
-  "Desarrollo web responsive",
+  "Desarrollo web",
   "App Android",
   "Streaming audio / video",
   "Proyecto completo",
