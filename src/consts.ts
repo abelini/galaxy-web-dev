@@ -40,6 +40,12 @@ export const SERVICES: Service[] = [
     icon: "fa-solid fa-play",
     tag: "Streaming",
   },
+  {
+    title: "WordPress ultrarrápido",
+    desc: "Servidores LiteSpeed con LSCache: tu WordPress carga en milisegundos. SSL gratis, copias diarias y seguridad reforzada.",
+    icon: "fa-brands fa-wordpress-simple",
+    tag: "WordPress",
+  },
 ];
 
 export const CONTACT_EMAIL = "sales@galaxyweb.dev";

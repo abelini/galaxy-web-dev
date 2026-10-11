@@ -7,6 +7,7 @@ const TEST_TURNSTILE_SECRET = "1x0000000000000000000000000000000AA";
 
 const ALLOWED_SERVICES = [
   "Hospedaje web",
+  "WordPress ultrarrápido",
   "Diseño web",
   "Desarrollo web",
   "App Android",
