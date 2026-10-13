@@ -43,8 +43,9 @@ cloud/
 
 ## Requisitos
 
-- Node.js >= 22
+- Node.js 26 (`node -v` → `v26.x`; verificado con `v26.11.1`, npm `11.20.0`)
 - npm (hay `package-lock.json`)
+- Al cambiar de major de Node, reinstalar dependencias: borrar `node_modules/` y `npm install` (hay binarios nativos: `@astrojs/compiler-binding`, `@tailwindcss/oxide`)
 
 ## Puesta en marcha
 
